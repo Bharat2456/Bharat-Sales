@@ -73,3 +73,40 @@ th{font-size:12px;font-weight:500;color:var(--text-3)}tr:last-child td{border-bo
 details>summary{cursor:pointer;font-weight:500;color:var(--text-2)}
 @media (prefers-reduced-motion:no-preference){.btn,.side-nav button,.lead{transition:background .12s}}
 .brand{text-decoration:none;color:var(--text)}
+
+/* ───────── Phones: bottom tab bar, stacked tables ───────── */
+@media(max-width:700px){
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+  aside{padding:12px 0 0}
+  .side-nav{position:fixed;left:0;right:0;bottom:0;z-index:30;width:auto;order:0;flex-direction:row;gap:0;justify-content:flex-start;
+    padding:6px max(6px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-right,0px));
+    background:var(--surface);border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .side-nav::-webkit-scrollbar{display:none}
+  .side-nav button{flex:1 0 66px;flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:6px 4px;min-height:54px;font-size:11px;border-radius:12px}
+  .side-nav button svg{width:22px;height:22px}
+  .side-nav .count{position:absolute;top:3px;right:12px;margin:0;font:600 10px var(--sans);background:var(--accent);color:var(--accent-ink);border-radius:99px;padding:0 5px;line-height:15px}
+  .side-nav button[aria-current=page]{background:var(--accent-soft);color:var(--text);box-shadow:none}
+  .side-nav button[aria-current=page]::before{display:none}
+  #toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .bar{flex-wrap:wrap;gap:10px}
+  .card{padding:16px}
+}
+@media(max-width:640px){
+  .scroll table,.scroll thead,.scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll thead{display:none}
+  .scroll tr{padding:10px 0;border-bottom:1px solid var(--line)}.scroll tr:last-child{border-bottom:0}
+  .scroll td{border:0;padding:2px 0;text-align:left!important}
+  .row.end{justify-content:flex-start}
+  .tiles{gap:8px}
+}
+@media(max-width:380px){.days{gap:8px}.days input[type=time]{padding:8px 6px}}
+/* Touch screens: no zoom-on-focus, comfortable tap targets */
+@media(pointer:coarse),(max-width:700px){
+  input,select,textarea{font-size:16px}
+  input:not([type=checkbox]):not([type=file]),select{min-height:44px}
+  input[type=checkbox]{width:20px;height:20px}
+  .btn{min-height:44px}.btn.sm{min-height:40px}
+  .seg button{min-height:36px}
+}
+/* Large screens: let the layout breathe */
+@media(min-width:1600px){.shell{max-width:1440px}}

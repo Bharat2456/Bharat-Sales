@@ -6,6 +6,7 @@
     t = t === 'dark' ? 'dark' : 'light';
     root.setAttribute('data-theme', t);
     try { localStorage.setItem('sb-theme', t); } catch (e) {}
+    var m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'dark' ? '#0E0F12' : '#F3F4F6');
     document.querySelectorAll('[data-theme-set]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-theme-set') === t)); });
   }
   window.setTheme = set;

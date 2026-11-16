@@ -25,6 +25,7 @@ An open-source outreach assistant that runs entirely in your browser. It finds b
 
 - [What it does](#what-it-does)
 - [See it working](#see-it-working)
+- [Works on every screen](#works-on-every-screen)
 - [Quick start](#quick-start)
 - [Using the dashboard](#using-the-dashboard)
 - [How scheduling works](#how-scheduling-works)
@@ -97,6 +98,15 @@ Found, drafted, sent, replied and booked, with the last seven days highlighted. 
 | Light | Dark |
 | --- | --- |
 | ![Overview, light](docs/img/11-overview.png) | ![Overview, dark](docs/img/12-overview-dark.png) |
+
+## Works on every screen
+
+The whole site adapts to the device in your hand:
+
+- **Phones:** a bottom tab bar for one-thumb navigation, tables that turn into stacked cards, large tap targets, and form fields sized so the page never zooms in when you tap one.
+- **Tablets and small laptops:** a compact top navigation and a roomy two-column layout.
+- **Desktops:** a full sidebar and side-by-side panels, with a wider layout on large monitors.
+- **Install it:** on a phone or tablet, use your browser's *Add to Home Screen* (or *Install app* on desktop Chrome and Edge) to open it like a normal app.
 
 ## Quick start
 

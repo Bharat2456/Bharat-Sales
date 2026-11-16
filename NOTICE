@@ -1,0 +1,11 @@
+Bharat Sales
+Copyright (c) 2026 Bharat Wagh
+
+This project is a web edition based on Sellbird (https://github.com/ethanplusai/sellbird),
+which is licensed under the GNU Affero General Public License v3.0 only.
+Parts of its logic (junk-domain filtering, fit scoring, opt-out and auto-reply triage,
+pre-send checks) were reimplemented in JavaScript for this edition.
+
+As a derivative work, Bharat Sales is also licensed under AGPL-3.0-only. See LICENSE.
+If you run a modified version for other people over a network, you must offer them the
+source of your modified version. The footer "Source code" link is set in assets/js/config.js.

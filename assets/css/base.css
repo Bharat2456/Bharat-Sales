@@ -1,0 +1,40 @@
+:root{
+  --sans:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'Geist Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --bg:#F3F4F6;--side:#F7F8F9;--surface:#FFFFFF;--surface-2:#F4F5F7;--surface-3:#E9EBEE;
+  --line:#E6E8EC;--line-strong:#D3D6DC;
+  --text:#14151A;--text-2:#5E6470;--text-3:#8E94A0;
+  --accent:#FFE23D;--accent-hover:#F5D416;--accent-ink:#14151A;--accent-soft:#FFF6BF;
+  --ink:#14151A;--focus:#14151A;
+  --good:#17784A;--good-bg:#E4F5EC;--wait:#8A5A00;--wait-bg:#FFF1D2;--bad:#B3232F;--bad-bg:#FCE9EB;--note:#5B3FA6;--note-bg:#EFE9FB;
+  --shadow:0 1px 2px rgb(20 21 26/.05),0 0 0 1px rgb(20 21 26/.04);
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0E0F12;--side:#131418;--surface:#181A1F;--surface-2:#202228;--surface-3:#2A2D35;
+  --line:#2A2D34;--line-strong:#3A3E47;
+  --text:#F3F4F6;--text-2:#A5AAB5;--text-3:#7A7F8B;
+  --accent:#FFE23D;--accent-hover:#FFEB75;--accent-ink:#14151A;--accent-soft:#3A3410;
+  --ink:#E7E9EE;--focus:#FFE23D;
+  --good:#4CC38A;--good-bg:#10291D;--wait:#E6B04A;--wait-bg:#2C2210;--bad:#F2737D;--bad-bg:#2E1417;--note:#B79CF0;--note-bg:#231B38;
+  --shadow:0 0 0 1px rgb(255 255 255/.06);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--text-2)}.faint{color:var(--text-3)}
+.seg{display:inline-flex;background:var(--surface-3);border-radius:10px;padding:3px;gap:2px}
+.seg button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;font-weight:500;font-size:13px;color:var(--text-2)}
+.seg button svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
+.seg button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.btn{font:600 13px var(--sans);cursor:pointer;border:0;border-radius:8px;padding:8px 14px;background:var(--surface);color:var(--text);box-shadow:inset 0 0 0 1px var(--line-strong);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:none}.btn.primary:hover{background:var(--accent-hover)}
+.btn.danger{color:var(--bad)}.btn[disabled]{opacity:.5;cursor:not-allowed}.btn.busy{opacity:.7;cursor:progress}
+.btn.sm{padding:5px 10px;font-size:12.5px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .12s}}

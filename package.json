@@ -1,0 +1,7 @@
+{
+  "name": "bharat-sales",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Open-source outreach assistant: find leads, write emails, follow up, handle replies, book calls.",
+  "license": "AGPL-3.0-only"
+}

@@ -72,3 +72,4 @@ th{font-size:12px;font-weight:500;color:var(--text-3)}tr:last-child td{border-bo
 #toast.err{background:var(--bad);color:#fff}
 details>summary{cursor:pointer;font-weight:500;color:var(--text-2)}
 @media (prefers-reduced-motion:no-preference){.btn,.side-nav button,.lead{transition:background .12s}}
+.brand{text-decoration:none;color:var(--text)}

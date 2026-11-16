@@ -163,7 +163,7 @@ async function saveLead(l){const i=S.leads.findIndex(x=>x.id===l.id);if(i<0)S.le
 async function removeLead(id){S.leads=S.leads.filter(x=>x.id!==id);if(S.sel===id)S.sel=null;persist()}
 async function saveCfg(){persist()}
 
-/* ═══════ Claude calls ═══════ */
+/* ═══════ AI calls ═══════ */
 /* ═══════ AI calls: straight from your browser to the provider you chose, with your own key ═══════ */
 const modelFor=()=>(S.ai.model||'').trim()||PROVIDERS[S.ai.provider].model;
 function parseJson(t){t=String(t||'').trim().replace(/^```(?:json)?\s*/i,'').replace(/```\s*$/,'');
@@ -445,7 +445,7 @@ function vOverview(){const st=stats(),L=S.leads,c=S.cfg;
     :`<div class="empty">Nothing waiting yet.</div>`}</div>`;
 }
 function vSetup(){const c=S.cfg,tzs=(typeof Intl.supportedValuesOf==='function')?Intl.supportedValuesOf('timeZone'):[];
-  return `<div class="card"><h2>Fill it in from a description</h2><p class="muted">Paste a few sentences about what you sell and who buys it. Claude fills the form from what the text says, and nothing else.</p>
+  return `<div class="card"><h2>Fill it in from a description</h2><p class="muted">Paste a few sentences about what you sell and who buys it. The AI fills the form from what the text says, and nothing else.</p>
   <textarea id="profile-src" placeholder="We make… Our customers are…"></textarea><div class="row">${btn('profile','Fill the form','primary','','profile')}</div></div>
   <div class="card"><h2>Your business</h2>
   <div class="grid2">${field('Your name (used to sign emails)','f-senderName',c.senderName)}${field('Company','f-company',c.company)}</div>
@@ -536,7 +536,7 @@ function vOutbox(){const L=S.leads.filter(l=>l.draft),due=S.leads.filter(l=>foll
   ${L.map(card).join('')}${done.length?`<div class="card"><h3>Sent (${done.length})</h3><div class="list">${done.map(l=>`<div class="lead" style="cursor:default"><span class="n">${esc(l.name)}</span><span>${pill(l.status)}</span><span class="s">${l.history.length} email${l.history.length===1?'':'s'} · ${esc(lastSent(l).subject)}</span></div>`).join('')}</div></div>`:''}`}
 function vReplies(){const cands=S.leads.filter(l=>(l.history||[]).length||l.thread||l.draft),t=S.leads.filter(l=>(l.thread&&l.thread.length)||l.replyDraft);
   return `<div class="card"><h2>Handle a reply</h2>
-  <p class="muted">Paste a reply you received. Opt-outs and auto-replies are caught by rule before Claude reads anything. If they want a call or meeting, the answer offers real times from your availability. If they ask for more information, it shares your website.</p>
+  <p class="muted">Paste a reply you received. Opt-outs and auto-replies are caught by rule before the AI reads anything. If they want a call or meeting, the answer offers real times from your availability. If they ask for more information, it shares your website.</p>
   <label>Which lead<select id="r-lead"><option value="">Choose…</option>${(cands.length?cands:S.leads).map(l=>`<option value="${l.id}" ${S.replyLead===l.id?'selected':''}>${esc(l.name)}</option>`).join('')}</select></label>
   <textarea id="reply" placeholder="Paste their reply here">${esc(S.reply)}</textarea>
   <div class="row">${btn('reply','Read reply','primary','','reply')}</div></div>

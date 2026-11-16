@@ -35,4 +35,4 @@ The folder `api/` holds one serverless function (`/api/fetch`) that reads a publ
 
 ## Licence
 
-GNU AGPL-3.0-only. Based on [Sellbird](https://github.com/ethanplusai/sellbird). See `LICENSE` and `NOTICE`.
+GNU AGPL-3.0-only. See `LICENSE` and `NOTICE`.
